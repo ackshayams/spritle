@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>SOLVE A PUZZLE</title>
+</head>
+
+<body>
+ 
+    <p id="demo2"></p>
+    <script>
+ 
+var n=parseInt(prompt("ENTER MATRIX SIZE !"));
+var arr = new Array(n);
+  
+document.write("PUZZLE <br>");
+for (var i = 0; i < arr.length; i++) {
+    arr[i] = [];
+}
+  
+for (var i = 0; i <n; i++) {
+    for (var j = 0; j < n; j++) {
+  
+        arr[i][j] = parseInt(prompt("ENTER NUMBER !"));
+    
+    }
+}
+
+for (var i = 0; i < n; i++) {
+    for (var j = 0; j < n; j++)
+  
+    {
+        document.write(arr[i][j] + " ");
+    }
+    document.write("<br>");
+}
+
+
+for (var i = 0; i < arr.length; i++) {
+  
+  for (var j = 0; j < arr.length; j++) {
+
+      for (var k = 0; k < arr[i].length - j - 1; k++) {
+          if (arr[i][k] > arr[i][k + 1]) {
+
+              var t = arr[i][k];
+              arr[i][k] = arr[i][k + 1];
+              arr[i][k + 1] = t;
+          }
+      }
+  }
+}
+document.write("SORTED ARRAY"+"<br>");
+for (var i = 0; i < arr.length; i++) {
+  for (var j = 0; j < arr[i].length; j++)
+      document.write(arr[i][j] + " ");
+  document.write("<br/>");
+}
+alert ("SORTED !");
+
+   </script>
+</body>
+</html>
